@@ -47,9 +47,9 @@ Please clone this repository and send through your completed coding challenge us
 
 ## Running this application
 1. Install dependencies by typing:`npm install`
-2. Run tests by typing `npm run test`
+2. Run tests by typing: `npm run test`
 
-The local MongoDB instance is used by default. To configure the instance: open `./config.js` and updated the default MongoDB uri:
+The local MongoDB instance is used by default. To configure the instance: open `./config.js` and update the default MongoDB uri:
 ```js
 db: {
     uri: 'mongodb://localhost',
