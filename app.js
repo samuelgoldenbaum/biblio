@@ -6,13 +6,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const JWTStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passport-jwt').ExtractJwt;
-
-const enums = require('./enums');
-const errors = require('./errors');
-const userService = require('./services/userService')();
 
 require('dotenv').config();
 const config = require(path.join(__dirname, 'config'))(process.env.MODE);
