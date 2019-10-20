@@ -54,30 +54,7 @@ module.exports = () => {
                 app.use(passport.initialize());
                 app.use(passport.session());
 
-                passport.use('signIn', new LocalStrategy({
-                    username: 'email',
-                    password: 'password'
-                }, async (email, password, done) => {
-                    try {
-                        const result = await userService.authenticate({email: email, password: password});
-                        if (result.status === enums.status.fail) {
-                            return done(null, false, {message: result.message});
-                        }
-
-                        return done(null, result.data, {message: 'authenticated'});
-                    } catch (err) {
-                        return done(err);
-                    }
-                }));
-
-                passport.use('jwt', new JWTStrategy({
-                        jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-                        secretOrKey: config.jwt.secret,
-                    },
-                    (result, done) => {
-                        return done(null, result);
-                    }
-                ));
+                require('./passport')(config, passport);
 
                 initRoutes(app)
                     .then(() => {
