@@ -12,7 +12,7 @@
   "dependencies": {
     "@hapi/joi": "^16.1.7",
     "async": "^3.1.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
